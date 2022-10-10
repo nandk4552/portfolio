@@ -9,6 +9,7 @@ type Props = {
 }
 
 export default function ExperienceCard({ experience }: Props) {
+
     return (
         <article className='flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 w-[400px] md:[500px] xl:w-[600px] snap-center bg-[#292929] p-10 overflow-hidden hover:opacity-100 opacity-40 cursor-pointer translate-opacity duration-200'>
             <motion.img
@@ -30,6 +31,7 @@ export default function ExperienceCard({ experience }: Props) {
                 <h4 className='text-3xl font-light'>{experience?.jobTitle}</h4>
                 <p className='font-bold text-2xl mt-1'>{experience?.company}</p>
                 <div className='flex space-x-2 my-2'>
+
                     {experience.technologies.map(technology => (
                         <Image
                             key={technology._id}

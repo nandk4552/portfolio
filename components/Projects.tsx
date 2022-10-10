@@ -9,6 +9,7 @@ type Props = {
 }
 
 function Projects({ projects }: Props) {
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -45,7 +46,7 @@ function Projects({ projects }: Props) {
                             <div className='flex items-center space-x-5 justify-center'>
                                 {project?.technologies.map(technology => (
 
-                                    <Image
+                                    < Image
                                         className='h-10 w-10 '
                                         key={technology._id} src={urlFor(technology?.image).url()} alt="" width={100} height={50} />
                                 ))}

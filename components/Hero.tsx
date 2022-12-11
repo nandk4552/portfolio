@@ -25,7 +25,7 @@ export default function Hero({ pageInfo }: Props) {
         <div className='h-screen flex flex-col space-y-10 items-center justify-center text-center overflow-hidden'>
             <BackGroundCircles />
             <Image
-                className='relative  border-[#F7AB0A]/90 bg-[#F7AB0A] shadow-md rounded-full h-32 w-32 mx-auto object-cover'
+                className='relative border-[#F7AB0A]/90 bg-[#F7AB0A] shadow-md rounded-full h-32 w-32 mx-auto object-cover'
                 src={urlFor(pageInfo?.heroImage).url()} alt="" width={100} height={100} />
             <div className='z-20'>
                 <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>

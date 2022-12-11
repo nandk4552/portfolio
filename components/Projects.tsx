@@ -23,8 +23,8 @@ function Projects({ projects }: Props) {
 
             <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 '>
                 {projects?.map((project, i) => (
-                    <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen' >
-                        <div className='max-w-30 max-h-50 md:w-70 md:h-70 overflow-hidden '>
+                    <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-40 md:p-40 h-screen' >
+                        <div className='max-w-30 max-h-50 md:w-70 md:h-100 overflow-hidden '>
                             <motion.img
                                 initial={{
                                     y: -300,
@@ -45,10 +45,9 @@ function Projects({ projects }: Props) {
                                     Case study {i + 1} of {projects.length}:</span> {project?.title}</h4>
                             <div className='flex items-center space-x-5 justify-center'>
                                 {project?.technologies.map(technology => (
-
-                                    < Image
-                                        className='h-10 w-10 '
-                                        key={technology._id} src={urlFor(technology?.image).url()} alt="" width={100} height={50} />
+                                    <Image
+                                        className='h-10 w-10 m-5 p-10'
+                                        key={technology._id} src={urlFor(technology?.image).url()} alt="" width={50} height={50} />
                                 ))}
                             </div>
 
@@ -56,7 +55,7 @@ function Projects({ projects }: Props) {
                                 {project?.summary}
                             </p>
                             <Link href={project?.linkToBuild}>
-                                <a target="_blank" className='px-3 py-2 hover:border-white hover: text-white'>Live Preview</a>
+                                <a target="_blank" className='px-3 py-2 bg-white text-black hover:border-white rounded-sm hover:bg-[#F7AB0A] text-base'>🔴 Live Preview</a>
                             </Link>
                         </div>
                     </div>

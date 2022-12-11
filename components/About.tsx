@@ -31,7 +31,7 @@ export default function About({ pageInfo }: Props) {
                 }}
                 viewport={{ once: true }}
                 src={urlFor(pageInfo?.profilePic).url()} alt=""
-                className='mt-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]  shadow-2xl shadow-[rgb(24,24,24)]/100'
+                className='mt-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:mb-20 xl:w-[400px] xl:h-[500px] shadow-2xl shadow-[rgb(24,24,24)]/100'
             />
 
             <div className='space-y-10 px-0 md:px-10'>

@@ -11,7 +11,7 @@ type Props = {
 export default function ExperienceCard({ experience }: Props) {
 
     return (
-        <article className='flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 w-[400px] md:[500px] xl:w-[600px] snap-center bg-[#292929] p-10 overflow-hidden hover:opacity-100 opacity-40 cursor-pointer translate-opacity duration-200'>
+        <article className='flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 w-[400px] md:[400px] xl:w-[500px] snap-center bg-[#292929] p-10 overflow-hidden hover:opacity-100 opacity-40 cursor-pointer translate-opacity duration-200'>
             <motion.img
                 initial={{
                     y: -100,
@@ -28,7 +28,7 @@ export default function ExperienceCard({ experience }: Props) {
                 src={urlFor(experience?.companyImage).url()} alt="" />
 
             <div className='px-0 md:px-10 '>
-                <h4 className='text-3xl font-light'>{experience?.jobTitle}</h4>
+                <h4 className='text-2xl font-light'>{experience?.jobTitle}</h4>
                 <p className='font-bold text-2xl mt-1'>{experience?.company}</p>
                 <div className='flex space-x-2 my-2'>
 
@@ -38,18 +38,20 @@ export default function ExperienceCard({ experience }: Props) {
                             className='h-10 w-10 rounded-full'
                             src={urlFor(technology?.image).url()}
                             alt=""
-                            width={100} height={100}
+                            width={50} height={50}
                         />
                     ))}
                 </div>
                 <p className='uppercase py-5 text-gray-300'>
                     {new Date(experience?.dateStarted).toDateString()} - {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience.dateEnded).toDateString()}
                 </p>
-                <ul className='list-disc space-y-4 ml-5 text-lg '>
-                    {experience?.points.map((point, i) => (
-                        <li key={i}>{point}</li>
-                    ))}
-                </ul>
+                <div className='overflow-auto'>
+                    <ul className='list-disc space-y-4 ml-5 text-sm'>
+                        {experience?.points.map((point, i) => (
+                            <li key={i}>{point}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
 
         </article>
